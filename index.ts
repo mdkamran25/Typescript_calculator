@@ -8,7 +8,8 @@ let memory:number[]  = [];
 let display = document.getElementById("display") as HTMLInputElement;
 // key press function of keyboard
 document.addEventListener("keypress", (event):void => {
-	var keyCode1:number = event.keyCode;
+	(document.activeElement as HTMLElement).blur();
+    var keyCode1:number = event.keyCode;
 	
 	// using asci value to check whther key_pressed is number, decimal point, or only these operator (+, -, *, /)
 	if (keyCode1 >= 48 && keyCode1 <= 57 || keyCode1 == 46 || keyCode1 == 42 || keyCode1 == 43 || keyCode1 == 45 || keyCode1 == 47) {

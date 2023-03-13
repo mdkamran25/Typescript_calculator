@@ -7,6 +7,7 @@ var memory = [];
 var display = document.getElementById("display");
 // key press function of keyboard
 document.addEventListener("keypress", function (event) {
+    document.activeElement.blur();
     var keyCode1 = event.keyCode;
     // using asci value to check whther key_pressed is number, decimal point, or only these operator (+, -, *, /)
     if (keyCode1 >= 48 && keyCode1 <= 57 || keyCode1 == 46 || keyCode1 == 42 || keyCode1 == 43 || keyCode1 == 45 || keyCode1 == 47) {
