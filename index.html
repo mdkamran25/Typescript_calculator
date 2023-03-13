@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+    <title>Scientific Calculator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Scientific Calculator</h1>
+        <div class="calc-body">
+            <form class="input-display">
+                <input type="text" id="display" name="display"  disabled>
+            </form>
+            <div class="deg buttons">
+                <button class="button" onclick="deg_to_radian()" id="degree">DEG</button>
+                <button class="button" id="F_E_" onclick="fe()">F-E</button>
+            </div>
+            <div class="M-function buttons">
+                <button class="button mc" id="mc_" onclick="mc()" disabled>MC</button>
+                <button class="button mr" id="mr_" onclick="mr()" disabled>MR</button>
+                <button class="button" onclick="m_add()">M+</button>
+                <button class="button" onclick="m_sub()">M-</button>
+                <button class="button" onclick="ms()">MS</button>
+            </div>
+            <div class="trigo">
+                <div style="width: 100%; display: flex;">
+                    <div class="trigo_function" id="trigo_function">
+                        <button class="button" id="trigo_fun_button" onclick="trigo_fun()" ><span class="traingle">⊿</span> Triganometry <i class="fa-solid fa-chevron-down"></i></button>
+                    </div>
+                    <div class="function_div" id="function_div">
+                        <button class="button" onclick="fun_body_display()"><span class="f-symbol">&#402;</span> Function <i class="fa-solid fa-chevron-down"></i></button>
+                        <div class="fun_body" id="fun_body">
+                            <div class="buttons fun_1st_row" id="fun_1st_row">                                                           
+                                <button class="button" onclick="mod_x()">|x|</button>
+                                <button class="button" onclick="floor()">&LeftFloor;x&RightFloor;</button>
+                                <button class="button" onclick="ceil()">&LeftCeiling;x&RightCeiling;</button>
+                            </div>
+                            <div class="buttons fun_2nd_row" id="fun_2nd_row">
+                                <button class="button" id="random" onclick="random()">rand</button>
+                                <button class="button" onclick="dms()"><i class="fa-solid fa-arrow-right"></i>dms</button>
+                                <button class="button" onclick="deg_dms()"><i class="fa-solid fa-arrow-right"></i>deg</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>  
+                <div class="trigo_fun_body" id="trigo_fun_body">
+                    <div class="buttons trigo_fun trigo_fun_sin" id="trigo_fun_sin">
+                        <button class="button" id="second_sin" onclick="second_sin_change()">2<sup>nd</sup></button>
+                        <button class="button" id="sin()" onclick="sin()">sin</button>
+                        <button class="button" id="cos()" onclick="cos()">cos</button>
+                        <button class="button" id="tan()" onclick="tan()">tan</button>
+                    </div>
+                    <div class="buttons trigo_fun trigo_fun_sec" id="trigo_fun_sec">
+                        <button class="button" id="hyp_sec" onclick="hyp_sin_change()">hyp</button>
+                        <button class="button" id="sec" onclick="sec()">sec</button>
+                        <button class="button" id="csc" onclick="csc()">csc</button>
+                        <button class="button" id="cot" onclick="cot()">cot</button>
+                    </div>
+                    <div class="buttons trigo_fun trigo_fun_sinh" id="trigo_fun_sinh">
+                        <button class="button" id="second_sinh" onclick="second_sinh_inverse_change()">2<sup>nd</sup></button>
+                        <button class="button" id="sinh" onclick="sinh()">sinh</button>
+                        <button class="button" id="cosh" onclick="cosh()">cosh</button>
+                        <button class="button" id="tanh" onclick="tanh()">tanh</button>
+                    </div>
+                    <div class="buttons trigo_fun trigo_fun_sech" id="trigo_fun_sech">
+                        <button class="button" onclick="hyp_sech_change_to_sin()" id="hyp_sech">hyp</button>
+                        <button class="button" id="sech" onclick="sech()">sech</button>
+                        <button class="button" id="csch" onclick="csch()">csch</button>
+                        <button class="button" id="coth" onclick="coth()">coth</button>
+                    </div>
+                    <div class="buttons trigo_fun trigo_fun_sin-1" id="trigo_fun_sin_1">
+                        <button class="button" onclick="second_sin_inverse_change()" id="second_sin_inverse">2<sup>nd</sup></button>
+                        <button class="button" id="sin_inv" onclick="sin_inv()">sin<sup>-1</sup></button>
+                        <button class="button" id="cos_inv" onclick="cos_inv()">cos<sup>-1</sup></button>
+                        <button class="button" id="tan_inv" onclick="tan_inv()">tan<sup>-1</sup></button>
+                    </div>
+                    <div class="buttons trigo_fun trigo_fun_sec-1" id="trigo_fun_sec_1">
+                        <button class="button" id="hyp_sec_inverse" onclick="hyp_change_sinh_inverse()">hyp</button>
+                        <button class="button" id="sec_inv" onclick="sec_inv()">sec<sup>-1</sup></button>
+                        <button class="button" id="csc_inv" onclick="csc_inv()">csc<sup>-1</sup></button>
+                        <button class="button" id="cot_inv" onclick="cot_inv()">cot<sup>-1</sup></button>
+                    </div>
+                    <div class="buttons trigo_fun trigo_fun_sinh-1" id="trigo_fun_sinh_1">
+                        <button class="button" id="second_sinh_inverse" onclick="sinh_inverse_second_reverse_to_sinh()">2<sup>nd</sup></button>
+                        <button class="button" id="sin_invh" onclick="sin_invh()">sinh<sup>-1</sup></button>
+                        <button class="button" id="cos_invh" onclick="cos_invh()">cosh<sup>-1</sup></button>
+                        <button class="button" id="tan_invh" onclick="tan_invh()">tanh<sup>-1</sup></button>
+                    </div>
+                    <div class="buttons trigo_fun trigo_fun_sech-1" id="trigo_fun_sech_1">
+                        <button class="button" onclick="reverse_to_sin_inverse()" id="hyp_sech_inverse">hyp</button>
+                        <button class="button" id="sec_invh" onclick="sec_invh()">sech<sup>-1</sup></button>
+                        <button class="button" id="csc_invh" onclick="csc_invh()">csch<sup>-1</sup></button>
+                        <button class="button" id="cot_invh" onclick="cot_invh()">coth<sup>-1</sup></button>
+                    </div>
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="button"  id="second_button" onclick="second_button_display_Change()" id="button-column">2<sup>nd</sup></button>
+                <button class="button pie" onclick="pi()">&pi;</button>
+                <button class="button" onclick="epsilon()">e</button>
+                <button class="button" id="clear" onclick="clr()">C</button>
+                <button class="button" id="backspace" onclick="backspace()">&#9003;</button>
+            </div>
+            <div class="buttons">
+                <button class="button second_change" id="square"  onclick="square()">x<sup>2</sup></button>
+                <button class="button second_changed" id="cube" onclick="cubed()">x<sup>3</sup></button>
+                <button class="button" id="fractional" onclick="fractional()">1/x</button>
+                <button class="button" id="mod-x" onclick="mod_x()">|x|</button>
+                <button class="button" id="exponential" OnClick="exponential(value)" value=".e+">exp</button>
+                <button class="button" id="mod" OnClick="mod(value)" value="%">mod</button>
+            </div>
+            <div class="buttons">
+                <button class="button second_change" id="square-root" onclick="square_root()">2<sub>&radic;<span style="text-decoration:overline;">&nbsp;X</span></sub></button>
+                <button class="button second_changed" id="cube-root" onclick="cube_root()">3<sub>&radic;<span style="text-decoration:overline;">&nbsp;X</span></sub></button>
+                <button class="button" id="opening-bracket" onclick="opening_bracket(value)" value="(">(</button>
+                <button class="button" id="closing-bracket" onclick="closing_bracket(value)" value=")">)</button>
+                <button class="button" id="factorial" onclick="factorial()">n!</button>
+                <button class="button" id="divide" onclick="divide(value)" value="/">&#247;</button>
+            </div>
+            <div class="buttons">
+                <button class="button second_change" id="x-power-y" onclick="x_power_y(value)" value="^" >x<sup>y</sup></button>
+                <button class="button second_changed" id="y_root_x" onclick="y_root_x(value)" value="yroot">y<sub>&radic;<span style="text-decoration:overline;">&nbsp;x</span></sub></button>
+                <button class="button number" onclick="element(value)" value="7">7</button>
+                <button class="button number" onclick="element(value)" value="8">8</button>
+                <button class="button number" onclick="element(value)" value="9">9</button>
+                <button class="button" id="multiply" onclick="element(value)" value="*">*</button>
+            </div>
+            <div class="buttons">
+                <button class="button second_change" id="ten-power-x" onclick="ten_power_x()">10<sup>x</sup></button>
+                <button class="button second_changed" id="two-power-x" onclick="two_power_x()">2<sup>x</sup></button>
+                <button class="button number" onclick="element(value)" value="4">4</button>
+                <button class="button number" onclick="element(value)" value="5">5</button>
+                <button class="button number" onclick="element(value)" value="6">6</button>
+                <button class="button" id="subtract" onclick="element(value)" value="-">-</button>
+            </div>
+            <div class="buttons">
+                <button class="button second_change" id="log" onclick="log()">log</button>
+                <button class="button second_changed" id="logxbasey" onclick="log_base_y(value)" value="ylog">log<sub>y</sub>x</button>
+                <button class="button number" onclick="element(value)" value="1">1</button>
+                <button class="button number" onclick="element(value)" value="2">2</button>
+                <button class="button number" onclick="element(value)" value="3">3</button>
+                <button class="button" id="add" onclick="element(value)" value="+">+</button>
+            </div>
+            <div class="buttons">
+                <button class="button second_change" id="ln" onclick="lnx()">ln</button>
+                <button class="button second_changed" id="ln" onclick="e_power_x">e<sup>x</sup></button>
+                <button class="button dot" onclick="signalt()"><sup>+</sup>&#8725;-</button>
+                <button class="button number" onclick="element(value)" value="0">0</button>
+                <button class="button dot" onclick="element(value)" value=".">.</button>
+                <button class="button" id="equal" onclick="equal()">=</button>
+            </div>  
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>

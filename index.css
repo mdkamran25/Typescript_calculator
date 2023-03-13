@@ -1,0 +1,254 @@
+body{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgb(255, 255, 255); */
+    background-color: wheat;
+}
+.calc-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    padding: 0.5rem;
+    border: 1px solid black;
+    /* background-color: yellow; */
+    background-color: rgb(250, 250, 250);
+}
+.button{
+    text-align: center;
+    padding: 0.5rem;
+    margin: 0rem 0.2rem;
+    border: none;
+    cursor: pointer;
+}
+.calc-body .input-display{
+    width: 100%;
+    margin: 1rem 0rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input{
+    padding: 1rem;
+    width: 100%;
+    text-align: end;
+    font-size: xx-large;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    background-color: rgb(250, 250, 250);
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem 0rem;
+    width: 100%;
+    /* background-color: yellow; */
+    background-color: rgb(243, 243, 243);
+}
+/* .buttons-column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1rem 0rem;
+    width: 20%;
+    background-color: rgb(243, 243, 243);
+} */
+/* .buttons-column button{
+    width: 100%;
+    height: 3rem;
+    font-size: large;
+} */
+.second_changed{
+    display: none;
+}
+#radian{
+    display: none;
+}
+.second_change{
+    display: block;
+}
+.buttons .button{
+    width: 20%;
+    height: 3rem;
+    font-size: large;
+}
+.button:hover{
+    background-color: rgb(121, 169, 215);
+}
+.deg{
+    width: 100%;
+    display: flex !important;
+    justify-content: start !important;
+}
+.deg .button{
+    width: 18.5% !important;
+    padding: 0rem !important;
+}
+
+.M-function button{
+    font-size: large;
+    font-weight: bold;
+    background-color: rgb(247, 247, 247);
+}
+.trigo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.1rem 0rem;
+    position: relative;
+    
+}
+.trigo_function{
+    margin-right: 0.2rem;
+    width: 40%;    
+}
+.trigo_function .button{
+    width: 100%;
+    height: 3rem;
+    margin-right: 0px;
+    font-size: medium;
+    font-weight: 600;
+    background-color: rgb(247, 247, 247);
+    text-align: center;
+}
+.trigo_fun_body{
+    width: 60%;
+    position: absolute;
+    top: 3.3rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.trigo_fun .button{
+    /* display: none; */
+    width: 30% !important;
+    font-size: small !important;
+    padding: 0.2rem !important;
+    margin: 0rem 0.1rem !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.fun_1st_row, .fun_2nd_row, .trigo_fun_sin, .trigo_fun_sech-1, .trigo_fun_sinh-1,  .trigo_fun_sec, .trigo_fun_sinh, .trigo_fun_sech, .trigo_fun_sin-1, .trigo_fun_sec-1, .trigo_fun_sin-1h, .trigo_fun_sec-1h, .trigo_fun_sinh-1, .trigo_fun_sech-1{
+    display: none;
+}
+.trigo_fun .button:hover{
+    border: 0.1px solid black;
+}
+.function_div{
+    margin-left: 0.2rem;
+    width: 50%;
+    position: relative;
+}
+.function_div .fun_body{
+    width: 100%;
+    position: absolute;
+    top: 3.1rem;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.fun_body .button{
+    width: 100% !important;
+    font-size: small !important;
+    padding: 0.2rem !important;
+    margin: 0rem 0.1rem !important;
+    height: 3rem !important;
+    font-weight: 500 !important;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.fun_body .button:hover{
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: rgb(121, 169, 215);
+    border: 1px solid black;
+}
+.function_div .button{
+    width: 100%;
+    height: 3rem;
+    margin-right: 0px;
+    font-size: medium;
+    font-weight: 600;
+    background-color: rgb(247, 247, 247);
+}
+.f-symbol .button{
+    padding-left: 0rem !important;
+}
+.trigo-function .button:hover{
+    background-color: rgb(121, 169, 215);
+}
+.number{
+    background-color: white;
+    font-size: x-large !important;
+    font-weight: bold;
+}
+.triangle, .f-symbol{
+    font-size: larger !important;
+}
+.dot{
+    font-weight: bold;
+    background-color: white;
+}
+#add, #subtract, #multiply, #divide, #equal{
+    font-weight: bold;
+    font-size: large;
+}
+@media only screen and (max-width: 450px) {
+    .calc-body{
+        width: 92% !important;
+    }
+    .trigo_function .button{
+        width: 100%;
+        height: 3rem;
+        margin-right: 0px;
+        font-size: small !important;
+        font-weight: 600;
+        background-color: rgb(247, 247, 247);
+        text-align: start !important;
+        margin: 0rem 0rem;
+        border: none;
+        cursor: pointer;  
+    }
+    .trigo_function{
+        width: 50%;
+    }
+    .trigo_fun_body{
+        width: 70%;
+    }
+    .function_div .button{
+        font-size: small;
+    }
+    #logxbasey{
+        padding: 0.35rem;
+    }
+  }
+  @media only screen and (max-width: 850px) {
+    .calc-body{
+        width: 80%;
+    }
+    .function_div .button{
+        text-align: start;
+    }
+    .fun_body .button{
+        text-align: center;
+    }
+  }
+  @media only screen and (max-width: 1044px) {
+    .calc-body{
+        width: 60%;
+    }
+    .trigo_function .button{
+        text-align: start !important;
+        width: 100%;
+        font-size: medium;
+    }
+  }
+  *:focus {
+    outline: none;
+  }
